@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ebook: Manual Completo de CSS para Aplicações Web Profissionais</title>
+    <!-- Incluindo Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .ebook-container {
+        max-width: 800px;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        padding: 2.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a202c;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        line-height: 1.2;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #2d3748;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #edf2f7;
+      }
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4a5568;
+        margin-top: 2rem;
+        margin-bottom: 0.8rem;
+      }
+      h4 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #5d6878;
+        margin-top: 1.5rem;
+        margin-bottom: 0.6rem;
+      }
+      p {
+        margin-bottom: 1rem;
+        color: #4a5568;
+      }
+      ul {
+        list-style-type: disc;
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        color: #4a5568;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      pre {
+        background-color: #e2e8f0;
+        border-left: 4px solid #4299e1;
+        padding: 1rem 1.5rem;
+        margin-bottom: 1.5rem;
+        overflow-x: auto;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      code {
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
+          monospace;
+        color: #a0aec0; /* Cor para código inline */
+        background-color: #edf2f7;
+        padding: 0.2em 0.4em;
+        border-radius: 4px;
+      }
+      pre code {
+        color: #2d3748; /* Cor para código em blocos pre */
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+      }
+      a {
+        color: #3182ce;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      /* Estilos para media queries (Responsividade) */
+      @media (max-width: 768px) {
+        .ebook-container {
+          padding: 1.5rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.75rem;
+        }
+        h3 {
+          font-size: 1.25rem;
+        }
+        h4 {
+          font-size: 1.1rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .ebook-container {
+          padding: 1rem;
+          border-radius: 8px;
+        }
+        h1 {
+          font-size: 1.75rem;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+        h3 {
+          font-size: 1.1rem;
+        }
+        h4 {
+          font-size: 1rem;
+        }
+        pre {
+          padding: 0.8rem;
+          font-size: 0.85rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ebook-container">
+      <h1>Manual Completo de CSS para Aplicações Web Profissionais</h1>
+
+      <p>
+        Este manual explora os fundamentos e as técnicas avançadas do CSS para
+        criar interfaces de usuário modernas, responsivas e visualmente
+        atraentes.
+      </p>
+
+      <h2>1. Fundamentos do CSS</h2>
+      <p>
+        O CSS (Cascading Style Sheets) é a linguagem utilizada para estilizar
+        documentos HTML. Ele descreve como os elementos HTML devem ser
+        exibidos.
+      </p>
+
+      <h3>1.1 Sintaxe Básica</h3>
+      <p>
+        Uma regra CSS consiste em um seletor e um bloco de declaração.
+      </p>
+      <pre><code>seletor {
+  propriedade: valor;
+  propriedade: valor;
+}
+</code></pre>
+      <ul>
+        <li>
+          <strong>Seletor:</strong> Aponta para o elemento HTML que você deseja
+          estilizar (e.g., <code>p</code>, <code>h1</code>,
+          <code>.classe</code>, <code>#id</code>).
+        </li>
+        <li>
+          <strong>Declaração:</strong> Consiste em uma
+          <strong>propriedade</strong> (o que você quer mudar, e.g.,
+          <code>color</code>, <code>font-size</code>) e um
+          <strong>valor</strong> (como você quer mudar a propriedade, e.g.,
+          <code>blue</code>, <code>16px</code>), separados por dois pontos
+          (<code>:</code>). Cada declaração termina com um ponto e vírgula
+          (<code>;</code>).
+        </li>
+      </ul>
+      <p><strong>Exemplo:</strong></p>
+      <pre><code>p {
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+</code></pre>
+
+      <h3>1.2 Como Incluir CSS no HTML</h3>
+      <p>
+        Existem três formas principais de incluir CSS em seu documento HTML:
+      </p>
+      <ol>
+        <li>
+          <strong>CSS Externo (Recomendado):</strong> Links para um arquivo
+          <code>.css</code> separado.
+          <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css" /&gt;
+&lt;/head&gt;
+</code></pre>
+        </li>
+        <li>
+          <strong>CSS Interno:</strong> Estilos definidos dentro da tag
+          <code>&lt;style&gt;</code> no <code>&lt;head&gt;</code> do HTML.
+          <pre><code>&lt;head&gt;
+  &lt;style&gt;
+    h1 {
+      color: navy;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+        </li>
+        <li>
+          <strong>CSS Inline:</strong> Estilos aplicados diretamente a um
+          elemento HTML usando o atributo <code>style</code>.
+          <pre><code>&lt;h2 style="color: green;"&gt;Este é um título verde&lt;/h2&gt;
+</code></pre>
+          <p>
+            <strong>Desvantagem:</strong> Dificulta a manutenção e a
+            reutilização do código.
+          </p>
+        </li>
+      </ol>
+
+      <h3>1.3 Seletores CSS Comuns</h3>
+      <ul>
+        <li>
+          <strong>Seletor de Tipo:</strong> Seleciona todos os elementos de um
+          tipo específico (e.g., <code>p</code>, <code>div</code>,
+          <code>a</code>).
+        </li>
+        <li>
+          <strong>Seletor de Classe:</strong> Seleciona elementos com um
+          atributo <code>class</code> específico (e.g.,
+          <code>.minha-classe</code>).
+        </li>
+        <li>
+          <strong>Seletor de ID:</strong> Seleciona um elemento com um atributo
+          <code>id</code> específico (e.g., <code>#meu-id</code>). IDs devem
+          ser únicos por página.
+        </li>
+        <li>
+          <strong>Seletor Universal:</strong> Seleciona todos os elementos
+          (<code>*</code>).
+        </li>
+        <li>
+          <strong>Seletores de Atributo:</strong> Seleciona elementos com um
+          atributo específico (e.g., <code>[type="text"]</code>).
+        </li>
+        <li>
+          <strong>Seletores Descendentes:</strong> Seleciona elementos que são
+          descendentes de outro (e.g., <code>div p</code>).
+        </li>
+        <li>
+          <strong>Seletores Filhos Diretos:</strong> Seleciona elementos que
+          são filhos diretos de outro (e.g., <code>ul &gt; li</code>).
+        </li>
+        <li>
+          <strong>Seletores Irmãos Adjacentes:</strong> Seleciona um elemento
+          que é o próximo irmão de outro (e.g., <code>h1 + p</code>).
+        </li>
+        <li>
+          <strong>Seletores Irmãos Gerais:</strong> Seleciona todos os irmãos
+          de um elemento que vêm depois dele (e.g., <code>h1 ~ p</code>).
+        </li>
+      </ul>
+
+      <h3>1.4 Especificidade e Cascata</h3>
+      <ul>
+        <li>
+          <strong>Cascata:</strong> Define qual regra CSS é aplicada quando
+          várias regras tentam estilizar o mesmo elemento. As regras são
+          aplicadas em uma ordem: Browser defaults -> User-defined styles ->
+          External stylesheets -> Internal stylesheets -> Inline styles.
+        </li>
+        <li>
+          <strong>Especificidade:</strong> Um algoritmo que determina qual
+          regra CSS é mais "específica" e, portanto, tem prioridade quando dois
+          ou mais seletores apontam para o mesmo elemento. A ordem de
+          prioridade (do menor para o maior) é: Seletores de tipo &lt;
+          Seletores de classe/atributo/pseudo-classes &lt; Seletores de ID
+          &lt; Inline styles. A palavra-chave <code>!important</code> pode
+          sobrescrever a especificidade, mas seu uso deve ser evitado devido à
+          dificuldade de manutenção.
+        </li>
+      </ul>
+
+      <h2>2. O Modelo de Caixa (Box Model)</h2>
+      <p>
+        Todos os elementos HTML são tratados como caixas pelo CSS. O modelo de
+        caixa consiste em:
+      </p>
+      <ul>
+        <li>
+          <strong>Conteúdo (Content):</strong> Onde o texto e as imagens
+          aparecem.
+        </li>
+        <li>
+          <strong>Padding:</strong> Espaço entre o conteúdo e a borda.
+        </li>
+        <li>
+          <strong>Borda (Border):</strong> A linha que envolve o padding e o
+          conteúdo.
+        </li>
+        <li>
+          <strong>Margem (Margin):</strong> Espaço fora da borda, entre o
+          elemento e outros elementos.
+        </li>
+      </ul>
+      <pre><code>div {
+  width: 200px;
+  height: 100px;
+  padding: 20px; /* 20px em todos os lados */
+  border: 1px solid black;
+  margin: 10px; /* 10px em todos os lados */
+
+  /* Propriedades individuais */
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+
+  /* Shorthand: top right bottom left */
+  margin: 10px 20px 30px 40px;
+}
+</code></pre>
+      <p>A propriedade <code>box-sizing</code> é crucial:</p>
+      <ul>
+        <li>
+          <code>content-box</code> (padrão): <code>width</code> e
+          <code>height</code> incluem apenas o conteúdo. Padding e borda
+          <em>adicionam</em> ao tamanho total.
+        </li>
+        <li>
+          <code>border-box</code>: <code>width</code> e <code>height</code>
+          incluem padding e borda. Mais intuitivo para layout.
+        </li>
+      </ul>
+      <pre><code>* {
+  box-sizing: border-box; /* Recomendado para todos os elementos */
+}
+</code></pre>
+
+      <h2>3. Layout com Flexbox e Grid</h2>
+      <p>
+        Flexbox e Grid são ferramentas poderosas para criar layouts complexos e
+        responsivos.
+      </p>
+
+      <h3>3.1 Flexbox (Modelo de Caixa Flexível)</h3>
+      <p>
+        Ideal para organizar itens em uma única dimensão (linha ou coluna).
+      </p>
+      <h4>Container Flex (elemento pai):</h4>
+      <pre><code>.container {
+  display: flex; /* Transforma o elemento em um container flex */
+  flex-direction: row; /* Ou column, row-reverse, column-reverse */
+  justify-content: center; /* Alinha itens no eixo principal (horizontal por padrão) */
+  align-items: center; /* Alinha itens no eixo transversal (vertical por padrão) */
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  gap: 10px; /* Espaço entre os itens */
+}
+</code></pre>
+      <h4>Itens Flex (elementos filhos):</h4>
+      <pre><code>.item {
+  flex-grow: 1; /* Permite que o item cresça para preencher o espaço disponível */
+  flex-shrink: 1; /* Permite que o item encolha se não houver espaço */
+  flex-basis: 100px; /* Tamanho inicial do item */
+  /* Shorthand: flex: grow shrink basis; */
+  align-self: flex-start; /* Alinha este item individualmente no eixo transversal */
+  order: 1; /* Define a ordem visual dos itens */
+}
+</code></pre>
+
+      <h3>3.2 CSS Grid Layout</h3>
+      <p>
+        Ideal para organizar itens em duas dimensões (linhas e colunas),
+        perfeito para layouts de página inteira.
+      </p>
+      <h4>Container Grid (elemento pai):</h4>
+      <pre><code>.grid-container {
+  display: grid; /* Transforma o elemento em um container grid */
+  grid-template-columns: 1fr 2fr 1fr; /* Três colunas com larguras relativas */
+  /* Ou: repeat(3, 1fr); 100px auto 200px; */
+  grid-template-rows: auto 100px; /* Duas linhas */
+  gap: 15px; /* Espaço entre as células (linhas e colunas) */
+  grid-template-areas:
+    "header header header"
+    "nav    main   aside"
+    "footer footer footer"; /* Define áreas nomeadas para o layout */
+}
+</code></pre>
+      <h4>Itens Grid (elementos filhos):</h4>
+      <pre><code>.grid-item {
+  grid-column: 1 / 3; /* Ocupa da linha de coluna 1 até a 3 (exclusiva) */
+  grid-row: 2; /* Ocupa a linha 2 */
+  /* Ou usando áreas nomeadas: */
+  grid-area: main; /* Associa o item à área 'main' */
+}
+</code></pre>
+
+      <h2>4. Responsividade</h2>
+      <p>
+        Aplicações web modernas precisam se adaptar a diferentes tamanhos de
+        tela (desktops, tablets, celulares).
+      </p>
+
+      <h3>4.1 Meta Viewport</h3>
+      <p>Essencial para a responsividade. Coloque no <code>&lt;head&gt;</code> do HTML:</p>
+      <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+</code></pre>
+      <ul>
+        <li>
+          <code>width=device-width</code>: Define a largura do viewport para a
+          largura do dispositivo.
+        </li>
+        <li>
+          <code>initial-scale=1.0</code>: Define o nível de zoom inicial.
+        </li>
+      </ul>
+
+      <h3>4.2 Media Queries</h3>
+      <p>
+        Permitem aplicar estilos CSS diferentes com base nas características do
+        dispositivo (largura, altura, orientação, etc.).
+      </p>
+      <pre><code>/* Estilos padrão para telas grandes */
+body {
+  font-size: 18px;
+}
+
+/* Estilos para telas com largura máxima de 768px (tablets e celulares) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  .container {
+    flex-direction: column; /* Em colunas em telas menores */
+  }
+}
+
+/* Estilos para telas com largura mínima de 992px (desktops) */
+@media (min-width: 992px) {
+  .hero-section {
+    padding: 100px 50px;
+  }
+}
+
+/* Para orientação paisagem em telas pequenas */
+@media (max-width: 600px) and (orientation: landscape) {
+  /* ... */
+}
+</code></pre>
+
+      <h3>4.3 Unidades Relativas e Fluidas</h3>
+      <p>
+        Evite unidades fixas (pixels) para larguras e alturas. Use unidades
+        relativas que se adaptam:
+      </p>
+      <ul>
+        <li>
+          <strong><code>%</code> (Porcentagem):</strong> Relativa ao elemento
+          pai.
+        </li>
+        <li>
+          <strong><code>em</code>:</strong> Relativa ao <code>font-size</code>
+          do elemento pai.
+        </li>
+        <li>
+          <strong><code>rem</code>:</strong> Relativa ao
+          <code>font-size</code> do elemento raiz (<code>&lt;html&gt;</code>).
+        </li>
+        <li>
+          <strong><code>vw</code> (Viewport Width):</strong> 1vw é 1% da
+          largura do viewport.
+        </li>
+        <li>
+          <strong><code>vh</code> (Viewport Height):</strong> 1vh é 1% da
+          altura do viewport.
+        </li>
+        <li>
+          <strong><code>min()</code>/<code>max()</code>/<code>clamp()</code>:</strong
+          > Funções CSS para definir valores com limites, muito úteis para
+          tipografia responsiva.
+        </li>
+      </ul>
+      <p><strong>Exemplo de Tipografia Responsiva:</strong></p>
+      <pre><code>h1 {
+  font-size: clamp(2rem, 5vw + 1rem, 4rem); /* min, ideal, max */
+}
+</code></pre>
+
+      <h3>4.4 Imagens Responsivas</h3>
+      <ul>
+        <li>
+          <strong><code>max-width: 100%</code> e <code>height: auto</code>:</strong>
+          Permite que a imagem encolha e expanda proporcionalmente.
+          <pre><code>img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove espaço extra abaixo da imagem */
+}
+</code></pre>
+        </li>
+        <li>
+          <strong>Elemento <code>&lt;picture&gt;</code>:</strong> Permite
+          servir diferentes versões de uma imagem com base nas media queries.
+          <pre><code>&lt;picture&gt;
+  &lt;source srcset="large.jpg" media="(min-width: 900px)" /&gt;
+  &lt;source srcset="medium.jpg" media="(min-width: 600px)" /&gt;
+  &lt;img src="small.jpg" alt="Descrição da imagem" /&gt;
+&lt;/picture&gt;
+</code></pre>
+        </li>
+      </ul>
+
+      <h2>5. Tipografia</h2>
+      <p>
+        A tipografia impacta diretamente a legibilidade e a estética da sua
+        aplicação.
+      </p>
+      <ul>
+        <li>
+          <strong><code>font-family</code>:</strong> Define a fonte (e.g.,
+          <code>Arial, sans-serif</code>). Use fontes do Google Fonts ou web
+          fonts para mais opções.
+        </li>
+        <li>
+          <strong><code>font-size</code>:</strong> Tamanho da fonte (e.g.,
+          <code>16px</code>, <code>1.2rem</code>, <code>clamp()</code>).
+        </li>
+        <li>
+          <strong><code>font-weight</code>:</strong> Espessura da fonte (e.g.,
+          <code>normal</code>, <code>bold</code>, <code>400</code>,
+          <code>700</code>).
+        </li>
+        <li>
+          <strong><code>line-height</code>:</strong> Espaçamento entre as
+          linhas (e.g., <code>1.5</code> para 150% do
+          <code>font-size</code>).
+        </li>
+        <li>
+          <strong><code>text-align</code>:</strong> Alinhamento do texto
+          (e.g., <code>left</code>, <code>center</code>, <code>right</code>,
+          <code>justify</code>).
+        </li>
+        <li>
+          <strong><code>text-decoration</code>:</strong> Linhas no texto (e.g.,
+          <code>none</code>, <code>underline</code>,
+          <code>line-through</code>).
+        </li>
+        <li>
+          <strong><code>letter-spacing</code>:</strong> Espaçamento entre as
+          letras.
+        </li>
+        <li>
+          <strong><code>word-spacing</code>:</strong> Espaçamento entre as
+          palavras.
+        </li>
+        <li>
+          <strong><code>text-transform</code>:</strong> Transforma o texto
+          (e.g., <code>uppercase</code>, <code>lowercase</code>,
+          <code>capitalize</code>).
+        </li>
+        <li>
+          <strong><code>color</code>:</strong> Cor do texto.
+        </li>
+      </ul>
+
+      <h2>6. Cores e Backgrounds</h2>
+      <p>As cores são fundamentais para a identidade visual.</p>
+
+      <h3>6.1 Cores</h3>
+      <p>Pode ser definido por:</p>
+      <ul>
+        <li>
+          <strong>Nomes de Cores:</strong> <code>red</code>, <code>blue</code>,
+          <code>green</code>.
+        </li>
+        <li>
+          <strong>RGB:</strong> <code>rgb(255, 0, 0)</code> (Vermelho).
+        </li>
+        <li>
+          <strong>RGBA:</strong> <code>rgba(255, 0, 0, 0.5)</code> (Vermelho
+          com 50% de opacidade).
+        </li>
+        <li>
+          <strong>HEX:</strong> <code>#FF0000</code> (Vermelho).
+        </li>
+        <li>
+          <strong>HSL:</strong> <code>hsl(0, 100%, 50%)</code> (Vermelho).
+        </li>
+        <li>
+          <strong>HSLA:</strong> <code>hsla(0, 100%, 50%, 0.5)</code> (Vermelho
+          com 50% de opacidade).
+        </li>
+      </ul>
+
+      <h3>6.2 Backgrounds</h3>
+      <ul>
+        <li>
+          <strong><code>background-color</code>:</strong> Cor de fundo.
+        </li>
+        <li>
+          <strong><code>background-image</code>:</strong> Imagem de fundo
+          (e.g., <code>url('imagem.png')</code>).
+        </li>
+        <li>
+          <strong><code>background-repeat</code>:</strong> Como a imagem se
+          repete (e.g., <code>no-repeat</code>, <code>repeat-x</code>,
+          <code>repeat-y</code>).
+        </li>
+        <li>
+          <strong><code>background-position</code>:</strong> Posição da imagem
+          (e.g., <code>center</code>, <code>top left</code>,
+          <code>50% 50%</code>).
+        </li>
+        <li>
+          <strong><code>background-size</code>:</strong> Tamanho da imagem
+          (e.g., <code>cover</code>, <code>contain</code>,
+          <code>100% auto</code>).
+        </li>
+        <li>
+          <strong><code>background-attachment</code>:</strong> Como a imagem se
+          comporta ao rolar (e.g., <code>scroll</code>, <code>fixed</code>,
+          <code>local</code>).
+        </li>
+      </ul>
+      <p><strong>Shorthand para Background:</strong></p>
+      <pre><code>div {
+  background: #f0f0f0 url('hero.jpg') no-repeat center center / cover;
+}
+</code></pre>
+
+      <h3>6.3 Gradientes</h3>
+      <p>Crie transições suaves entre cores.</p>
+      <ul>
+        <li>
+          <strong><code>linear-gradient()</code>:</strong>
+          <pre><code>div {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+</code></pre>
+        </li>
+        <li>
+          <strong><code>radial-gradient()</code>:</strong>
+          <pre><code>div {
+  background: radial-gradient(circle at center, #7b4397, #dc2430);
+}
+</code></pre>
+        </li>
+      </ul>
+
+      <h2>7. Pseudo-classes e Pseudo-elementos</h2>
+
+      <h3>7.1 Pseudo-classes</h3>
+      <p>Selecionam elementos com base em seu estado.</p>
+      <ul>
+        <li>
+          <strong><code>:hover</code>:</strong> Quando o mouse está sobre o
+          elemento.
+        </li>
+        <li>
+          <strong><code>:active</code>:</strong> Quando o elemento está sendo
+          clicado.
+        </li>
+        <li>
+          <strong><code>:focus</code>:</strong> Quando o elemento de formulário
+          está em foco.
+        </li>
+        <li>
+          <strong><code>:nth-child(n)</code>:</strong> Seleciona o n-ésimo
+          filho.
+        </li>
+        <li>
+          <strong><code>:first-child</code> / <code>:last-child</code>:</strong
+          > Primeiro/último filho.
+        </li>
+        <li>
+          <strong><code>:root</code>:</strong> O elemento raiz do documento
+          (<code>&lt;html&gt;</code>).
+        </li>
+        <li>
+          <strong><code>:not(seletor)</code>:</strong> Seleciona elementos que
+          não correspondem ao seletor.
+        </li>
+      </ul>
+      <p><strong>Exemplo:</strong></p>
+      <pre><code>a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+li:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+</code></pre>
+
+      <h3>7.2 Pseudo-elementos</h3>
+      <p>Selecionam e estilizam partes específicas de um elemento.</p>
+      <ul>
+        <li>
+          <strong><code>::before</code> / <code>::after</code>:</strong>
+          Insere conteúdo antes/depois do elemento. Requer a propriedade
+          <code>content</code>.
+        </li>
+        <li>
+          <strong><code>::first-letter</code>:</strong> A primeira letra de um
+          bloco de texto.
+        </li>
+        <li>
+          <strong><code>::first-line</code>:</strong> A primeira linha de um
+          bloco de texto.
+        </li>
+        <li>
+          <strong><code>::selection</code>:</strong> A parte do texto
+          selecionada pelo usuário.
+        </li>
+      </ul>
+      <p><strong>Exemplo:</strong></p>
+      <pre><code>h2::before {
+  content: "✨ ";
+}
+
+p::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+  float: left;
+  margin-right: 0.1em;
+}
+
+::selection {
+  background-color: #007bff;
+  color: white;
+}
+</code></pre>
+
+      <h2>8. Transições e Animações (Suavidade)</h2>
+      <p>
+        Essas propriedades são cruciais para adicionar "suavidade" e uma
+        experiência profissional.
+      </p>
+
+      <h3>8.1 Transições CSS</h3>
+      <p>Permitem mudar gradualmente de um estado para outro.</p>
+      <pre><code>.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out; /* Quais propriedades transicionar e tempo */
+}
+
+.button:hover {
+  background-color: #0056b3;
+  color: #f8f9fa;
+}
+
+/* Propriedades da transição: */
+/* transition-property: qual propriedade será transicionada (e.g., color, all) */
+/* transition-duration: duração da transição (e.g., 0.5s, 300ms) */
+/* transition-timing-function: curva de velocidade (e.g., ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier(...)) */
+/* transition-delay: atraso antes de iniciar a transição */
+</code></pre>
+
+      <h3>8.2 Animações CSS</h3>
+      <p>
+        Permitem criar sequências de animação mais complexas com keyframes.
+      </p>
+      <ol>
+        <li>
+          <strong>Defina os <code>@keyframes</code>:</strong>
+          <pre><code>@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</code></pre>
+        </li>
+        <li>
+          <strong>Aplique a animação ao elemento:</strong>
+          <pre><code>.element {
+  animation-name: slideIn;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.2s;
+  animation-iteration-count: 1; /* ou infinite */
+  animation-direction: normal; /* ou alternate */
+  animation-fill-mode: forwards; /* Mantém o estado final da animação */
+}
+
+/* Shorthand: */
+.element {
+  animation: slideIn 0.8s ease-out 0.2s forwards;
+}
+</code></pre>
+        </li>
+      </ol>
+
+      <h2>9. Transformações (2D e 3D)</h2>
+      <p>Permitem manipular a forma e a posição dos elementos.</p>
+
+      <h3>9.1 Transformações 2D</h3>
+      <ul>
+        <li>
+          <strong><code>translate(x, y)</code>:</strong> Move o elemento.
+        </li>
+        <li>
+          <strong><code>rotate(angle)</code>:</strong> Gira o elemento.
+        </li>
+        <li>
+          <strong><code>scale(x, y)</code>:</strong> Redimensiona o elemento.
+        </li>
+        <li>
+          <strong><code>skew(x-angle, y-angle)</code>:</strong> Inclina o
+          elemento.
+        </li>
+      </ul>
+      <p><strong>Exemplo:</strong></p>
+      <pre><code>.card:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+</code></pre>
+
+      <h3>9.2 Transformações 3D</h3>
+      <p>
+        Requerem a propriedade <code>perspective</code> no elemento pai para
+        criar um espaço 3D.
+      </p>
+      <ul>
+        <li>
+          <strong><code>translate3d(x, y, z)</code>:</strong> Move em 3 eixos.
+        </li>
+        <li>
+          <strong><code>rotateX(angle)</code>:</strong> Gira em torno do eixo
+          X.
+        </li>
+        <li>
+          <strong><code>rotateY(angle)</code>:</strong> Gira em torno do eixo
+          Y.
+        </li>
+        <li>
+          <strong><code>rotateZ(angle)</code>:</strong> Gira em torno do eixo
+          Z.
+        </li>
+        <li>
+          <strong><code>scale3d(x, y, z)</code>:</strong> Redimensiona em 3
+          eixos.
+        </li>
+      </ul>
+      <p><strong>Exemplo:</strong></p>
+      <pre><code>.flip-container {
+  perspective: 1000px; /* Cria o espaço 3D */
+}
+
+.flipper {
+  transition: transform 0.6s;
+  transform-style: preserve-3d; /* Garante que os filhos são renderizados em 3D */
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+</code></pre>
+
+      <h2>10. Acessibilidade</h2>
+      <p>Garantir que sua aplicação seja utilizável por todos.</p>
+      <ul>
+        <li>
+          <strong>Contraste de Cores:</strong> Use ferramentas para verificar o
+          contraste entre texto e fundo. O WACG recomenda um contraste mínimo
+          de 4.5:1 para texto normal.
+        </li>
+        <li>
+          <strong>Focus States:</strong> Certifique-se de que os elementos
+          interativos (<code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>,
+          <code>&lt;input&gt;</code>) tenham um estado de foco visível (e.g.,
+          <code>outline</code> ou <code>box-shadow</code>) para usuários de
+          teclado.
+          <pre><code>button:focus,
+a:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+</code></pre>
+        </li>
+        <li>
+          <strong>Semântica HTML:</strong> Use a estrutura HTML correta
+          (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+          <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, etc.) para
+          melhorar a navegação por leitores de tela.
+        </li>
+        <li>
+          <strong><code>alt</code> em imagens:</strong> Forneça texto
+          alternativo descritivo para todas as imagens.
+        </li>
+      </ul>
+
+      <h2>11. Organização e Boas Práticas</h2>
+      <p>Um CSS bem organizado é essencial para projetos grandes.</p>
+      <ul>
+        <li>
+          <strong>Nomenclatura (BEM, SMACSS, OOCSS):</strong>
+          <ul>
+            <li>
+              <strong>BEM (Block Element Modifier):</strong>
+              <code>bloco__elemento--modificador</code> (e.g.,
+              <code>.card__title--large</code>).
+            </li>
+            <li>
+              <strong>SMACSS (Scalable and Modular Architecture for CSS):</strong
+              > Organiza regras em categorias (Base, Layout, Modules, State,
+              Theme).
+            </li>
+            <li>
+              <strong>OOCSS (Object-Oriented CSS):</strong> Separa a estrutura
+              do estilo e o comportamento da aparência.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Comentários:</strong> Use comentários para explicar seções
+          complexas ou lógicas específicas.
+        </li>
+        <li>
+          <strong>Variáveis CSS (Custom Properties):</strong> Definem valores
+          reutilizáveis.
+          <pre><code>:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --font-stack: Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-stack);
+  color: var(--primary-color);
+}
+</code></pre>
+        </li>
+        <li>
+          <strong>Pré-processadores CSS (Sass, Less, Stylus):</strong> Adicionam
+          funcionalidades como variáveis, mixins, funções e aninhamento ao CSS,
+          que são compiladas para CSS padrão.
+        </li>
+        <li>
+          <strong>Modularização:</strong> Divida seu CSS em arquivos menores e
+          mais gerenciáveis (e.g., <code>base.css</code>,
+          <code>layout.css</code>, <code>components.css</code>).
+        </li>
+        <li>
+          <strong>Ferramentas de Desenvolvimento:</strong> Use as ferramentas
+          de desenvolvedor do navegador para inspecionar e depurar seu CSS.
+        </li>
+      </ul>
+
+      <h2>12. Elementos Estilizados e Profissionais</h2>
+
+      <h3>12.1 Sombras e Elevação (Shadows and Elevation)</h3>
+      <p>Use <code>box-shadow</code> para dar profundidade aos elementos.</p>
+      <pre><code>.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* horizontal vertical blur spread color */
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+</code></pre>
+
+      <h3>12.2 Formas e Bordas Arredondadas</h3>
+      <ul>
+        <li>
+          <strong><code>border-radius</code>:</strong> Arredonda os cantos.
+          <pre><code>.button {
+  border-radius: 5px;
+}
+.circle {
+  border-radius: 50%; /* Para um círculo perfeito */
+}
+</code></pre>
+        </li>
+        <li>
+          <strong><code>clip-path</code>:</strong> Cria formas geométricas
+          complexas.
+          <pre><code>.diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+</code></pre>
+        </li>
+      </ul>
+
+      <h3>12.3 Efeitos Visuais (Blur, Opacidade)</h3>
+      <ul>
+        <li>
+          <strong><code>opacity</code>:</strong> Controla a transparência de um
+          elemento (0 a 1).
+        </li>
+        <li>
+          <strong><code>filter</code>:</strong> Aplica efeitos visuais.
+          <pre><code>.blurred-background {
+  filter: blur(5px);
+}
+
+.faded-text {
+  opacity: 0.7;
+}
+</code></pre>
+        </li>
+      </ul>
+
+      <h3>12.4 Ícones e SVG</h3>
+      <ul>
+        <li>
+          <strong>Font Awesome, Lucide Icons:</strong> Bibliotecas de ícones para
+          uso fácil.
+        </li>
+        <li>
+          <strong>SVG (Scalable Vector Graphics):</strong> Use SVGs para ícones
+          e gráficos complexos que escalam sem perda de qualidade. Podem ser
+          estilizados com CSS.
+          <pre><code>&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+  &lt;path d="M12 2L2 7l10 5 10-5-10-5z"&gt;&lt;/path&gt;
+  &lt;path d="M2 17l10 5 10-5"&gt;&lt;/path&gt;
+  &lt;path d="M2 12l10 5 10-5"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;style&gt;
+svg {
+  color: #007bff;
+}
+
+svg:hover {
+  color: #0056b3;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+&lt;/style&gt;
+</code></pre>
+        </li>
+      </ul>
+
+      <h3>12.5 Layouts Dinâmicos e Interativos</h3>
+      <ul>
+        <li>
+          <strong>Sticky Elements:</strong> Elementos que ficam fixos após rolar
+          até uma determinada posição.
+          <pre><code>.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+</code></pre>
+        </li>
+        <li>
+          <strong>Modal Boxes:</strong> Usando <code>position: fixed</code> e
+          <code>z-index</code>.
+          <pre><code>.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+</code></pre>
+        </li>
+      </ul>
+      <p>
+        Este manual oferece uma base sólida para você criar aplicações web
+        incríveis. Lembre-se de praticar e experimentar com as propriedades para
+        ver como elas se comportam.
+      </p>
+    </div>
+  </body>
+</html>
